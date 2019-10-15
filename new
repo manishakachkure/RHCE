@@ -1,0 +1,60 @@
+# HTTP(80)
+/etc/httpd/conf.d
+/usr/share/doc/httpd-2.4.6/httpd-vhosts.conf
+
+# PORT ASSIGNING
+/etc/httpd/conf/httpd.conf
+
+#WSGI
+ - lab webapp setup
+ - yum install mod_wsgi.x86-64
+ - /home/student/webapp.wsgi
+
+#PORT FORWORDING
+man firewalld.richlanguage
+
+#NFS(111)
+/etc/exports
+
+systemctl restart nfs-server
+systemctl enable nfs-server
+
+#KERBEROES(NFS SECURE)
+    - lab nfskrb5 setup
+    - /etc/sysconfig/nfs
+    - /etc/fstab
+
+#TEAMING
+  - lab teambridge setup
+  - cat /usr/share/doc/teamd-1.9/example_configs/activebackup-nsna-ping-1.conf
+  - teamdctl team1 state
+  - nmcli connection up team name
+
+# SAMBA(139)
+  - yum install samba samba-client
+  - /etc/samba/smb.conf
+  - systemctl restart smb nmb
+  - systemctl enable smb nmb
+   # for client
+    - yum install samba-client cifs-utils
+
+# ALIAS
+   - /etc/profile or /bash
+
+# MARIADB(3306)
+  - yum install mariadb mariadb-client
+  - /etc/my.cnf
+    * mysql_secure_installation
+
+# ISCSI(3260)
+  - yum install targetcli
+  - systemctl restart target
+  - systemcli enable target
+  - /etc/iscsi/initiatorname.iscsi
+
+# SMTP(25)
+  - lab smtp-nullclient setup
+  - /etc/postfix/main.conf
+  - systemctl restart postfix.service
+  - systemctl enable postfix.service
+
